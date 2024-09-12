@@ -1,0 +1,3 @@
+@startuml Geometry Dash Hierarchy
+rectangle test Rectangle
+@enduml
