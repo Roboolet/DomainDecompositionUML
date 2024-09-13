@@ -1,3 +1,20 @@
 @startuml Geometry Dash Hierarchy
-rectangle test Rectangle
+
+'Portals
+class Portal
+class GravityPortal
+class GamemodePortal
+class SizePortal
+class DualPortal
+class TelePortal
+class ScreenFlipPortal
+class SpeedPortal
+
+Portal <|-- GravityPortal
+Portal <|-- GamemodePortal
+Portal <|-- SizePortal
+Portal <|-- DualPortal
+Portal <|-- TelePortal
+Portal <|-- ScreenFlipPortal
+Portal <|-- SpeedPortal
 @enduml
