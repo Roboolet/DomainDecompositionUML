@@ -1,20 +1,33 @@
 @startuml Geometry Dash Hierarchy
 
-'Portals
+' -- Leas section --
+' Portals
 class Portal
-class GravityPortal
-class GamemodePortal
-class SizePortal
-class DualPortal
-class TelePortal
-class ScreenFlipPortal
-class SpeedPortal
+interface IPortalDecorator
+Interface IInvertable
 
-Portal <|-- GravityPortal
-Portal <|-- GamemodePortal
-Portal <|-- SizePortal
-Portal <|-- DualPortal
-Portal <|-- TelePortal
-Portal <|-- ScreenFlipPortal
-Portal <|-- SpeedPortal
+class GravityPortalDecorator
+class GamemodePortalDecorator
+class SizePortalDecorator
+class DualPortalDecorator
+class TelePortalDecorator
+class ScreenFlipPortalDecorator
+class SpeedPortalDecorator
+
+
+' Decorators
+Portal o-- IPortalDecorator
+IPortalDecorator <|.. GravityPortalDecorator
+IPortalDecorator <|.. GamemodePortalDecorator
+IPortalDecorator <|.. SizePortalDecorator
+IPortalDecorator <|.. DualPortalDecorator
+IPortalDecorator <|.. TelePortalDecorator
+IPortalDecorator <|.. ScreenFlipPortalDecorator
+IPortalDecorator <|.. SpeedPortalDecorator
+
+IInvertable <|.. GravityPortalDecorator
+IInvertable <|.. SizePortalDecorator
+IInvertable <|.. DualPortalDecorator
+IInvertable <|.. ScreenFlipPortalDecorator
+
 @enduml
