@@ -1,3 +1,30 @@
 @startuml Geometry Dash Hierarchy
-rectangle test Rectangle
-@enduml
+' <|-- Extension
+' *-- Composition
+' o-- Aggregation
+' <|.. dotted line
+
+' Dion's section, gamemodes  
+interface IInput 
+
+class Cube
+class Ship
+class Ball
+class UFO
+class Wave
+class Robot
+class Spider
+
+enum gamemodeTypes
+
+' Connections 
+Cube -> IInput
+Ship -> IInput
+Ball -> IInput
+UFO -> IInput
+Wave -> IInput
+Robot -> IInput
+Spider -> IInput
+
+@enduml 
+
