@@ -4,15 +4,46 @@
 ' Portals
 class Portal
 interface IPortalDecorator
+{
+    Portal owner
+    void OnEnter()
+}
 Interface IInvertable
+{
+    bool isInverted
+}
 
 class GravityPortalDecorator
+{
+    void OnEnter()
+}
 class GamemodePortalDecorator
+{
+    GamemodeTypes type
+    void OnEnter()
+}
 class SizePortalDecorator
+{
+    void OnEnter()
+}
 class DualPortalDecorator
+{
+    void OnEnter()
+}
 class TelePortalDecorator
+{
+    Vector3 exitPoint
+    void OnEnter()
+}
 class ScreenFlipPortalDecorator
+{
+    void OnEnter()
+}
 class SpeedPortalDecorator
+{
+    float speedMultiplier
+    void OnEnter()
+}
 
 
 ' Decorators
