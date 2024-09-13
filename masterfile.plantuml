@@ -69,4 +69,54 @@ IInvertable <|.. SizePortalDecorator
 IInvertable <|.. DualPortalDecorator
 IInvertable <|.. ScreenFlipPortalDecorator
 
-@enduml
+' <|-- Extension
+' *-- Composition
+' o-- Aggregation
+' <|.. dotted line
+
+' Dion's section, gamemodes  
+interface State {
+    void Execute()
+    void OnTap()
+    void OnHold()
+}
+
+class CubeState {
+    void Execute()
+}
+class ShipState {
+    void Execute()
+}
+class BallState {
+    void Execute()
+}
+class UFOState {
+    void Execute()
+}
+class WaveState {
+    void Execute()
+}
+class RobotState {
+    void Execute()
+}
+class SpiderState {
+    void Execute()
+}
+
+class StateMachine {
+    enum GamemodeTypes
+    Dictionary[] states
+    void ChangeState
+}
+
+' Connections 
+CubeState ..|> State
+ShipState ..|> State
+BallState ..|> State
+UFOState ..|> State
+WaveState ..|> State
+RobotState ..|> State
+SpiderState ..|> State
+
+State --o StateMachine
+@enduml 
