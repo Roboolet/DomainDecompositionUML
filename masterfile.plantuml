@@ -1,13 +1,11 @@
 @startuml Geometry Dash Hierarchy
 'Maarten's Section: Orbs'
 
-
-
-class Jump
-
+class Jump {
+    float jumpForce
+}
 
 class Gravity
-
 
 
 object Yellow
@@ -16,15 +14,17 @@ object Purple
 
 object Orange
 
-object Blue
+object Blue 
+
 
 object Green
+
 
 Jump <|-- Yellow
 Jump <|-- Orange
 Jump <|-- Purple
-Jump <|-- Blue
 
+Gravity <|-- Blue
 Gravity <|-- Green
 
 
