@@ -5,26 +5,54 @@
 ' <|.. dotted line
 
 ' Dion's section, gamemodes  
-interface IInput 
+interface IInput {
+    void OnTap()
+    void OnHold()
+}
 
-class Cube
-class Ship
-class Ball
-class UFO
-class Wave
-class Robot
-class Spider
+class CubeState {
+    void Execute()
+}
+class ShipState {
+    void Execute()
+}
+class BallState {
+    void Execute()
+}
+class UFOState {
+    void Execute()
+}
+class WaveState {
+    void Execute()
+}
+class RobotState {
+    void Execute()
+}
+class SpiderState {
+    void Execute()
+}
 
-enum gamemodeTypes
+class StateMachine {
+    enum GamemodeTypes
+    Dictionary[] states
+    void ChangeState
+}
 
 ' Connections 
-Cube -> IInput
-Ship -> IInput
-Ball -> IInput
-UFO -> IInput
-Wave -> IInput
-Robot -> IInput
-Spider -> IInput
+CubeState <|.. IInput
+ShipState <|.. IInput
+BallState <|.. IInput
+UFOState <|.. IInput
+WaveState <|.. IInput
+RobotState <|.. IInput
+SpiderState <|.. IInput
+
+CubeState <-> StateMachine
+ShipState <-> StateMachine
+BallState <-> StateMachine
+UFOState <-> StateMachine
+WaveState <-> StateMachine
+RobotState <-> StateMachine
+SpiderState <-> StateMachine
 
 @enduml 
-
