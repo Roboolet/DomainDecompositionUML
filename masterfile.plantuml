@@ -5,7 +5,8 @@
 ' <|.. dotted line
 
 ' Dion's section, gamemodes  
-interface IInput {
+interface State {
+    void Execute()
     void OnTap()
     void OnHold()
 }
@@ -39,20 +40,13 @@ class StateMachine {
 }
 
 ' Connections 
-CubeState <|.. IInput
-ShipState <|.. IInput
-BallState <|.. IInput
-UFOState <|.. IInput
-WaveState <|.. IInput
-RobotState <|.. IInput
-SpiderState <|.. IInput
+CubeState ..|> State
+ShipState ..|> State
+BallState ..|> State
+UFOState ..|> State
+WaveState ..|> State
+RobotState ..|> State
+SpiderState ..|> State
 
-CubeState <-> StateMachine
-ShipState <-> StateMachine
-BallState <-> StateMachine
-UFOState <-> StateMachine
-WaveState <-> StateMachine
-RobotState <-> StateMachine
-SpiderState <-> StateMachine
-
+State --o StateMachine
 @enduml 
