@@ -1,4 +1,28 @@
 @startuml Geometry Dash Hierarchy
+'Maarten's Section: Orbs'
+
+class Jump {
+    float jumpForce
+}
+class Gravity
+
+
+object Yellow
+object Purple
+object Orange
+
+
+object Blue 
+object Green
+
+
+Jump <|-- Yellow
+Jump <|-- Orange
+Jump <|-- Purple
+
+Gravity <|-- Blue
+Gravity <|-- Green
+
 
 ' -- Leas section --
 ' Portals
@@ -119,29 +143,8 @@ RobotState ..|> State
 SpiderState ..|> State
 
 State --o StateMachine
-'Maarten's Section: Orbs'
-
-class Jump {
-    float jumpForce
-}
-class Gravity
-
-
-object Yellow
-object Purple
-object Orange
-
-
-object Blue 
-object Green
-
-
-Jump <|-- Yellow
-Jump <|-- Orange
-Jump <|-- Purple
-
-Gravity <|-- Blue
-Gravity <|-- Green
-
+GamemodePortalDecorator -> StateMachine
+State <- Jump
+State <- Gravity
 
 @enduml
