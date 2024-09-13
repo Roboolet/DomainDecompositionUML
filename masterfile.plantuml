@@ -3,6 +3,10 @@
 ' -- Leas section --
 ' Portals
 class Portal
+{
+    Vector4 triggerBounds
+    void OnTriggerEnter()
+}
 interface IPortalDecorator
 {
     Portal owner
@@ -15,6 +19,7 @@ Interface IInvertable
 
 class GravityPortalDecorator
 {
+    bool isInverted
     void OnEnter()
 }
 class GamemodePortalDecorator
@@ -24,10 +29,12 @@ class GamemodePortalDecorator
 }
 class SizePortalDecorator
 {
+    bool isInverted
     void OnEnter()
 }
 class DualPortalDecorator
 {
+    bool isInverted
     void OnEnter()
 }
 class TelePortalDecorator
@@ -37,6 +44,7 @@ class TelePortalDecorator
 }
 class ScreenFlipPortalDecorator
 {
+    bool isInverted
     void OnEnter()
 }
 class SpeedPortalDecorator
