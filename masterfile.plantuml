@@ -4,19 +4,15 @@
 class Jump {
     float jumpForce
 }
-
 class Gravity
 
 
 object Yellow
-
 object Purple
-
 object Orange
 
+
 object Blue 
-
-
 object Green
 
 
