@@ -119,4 +119,29 @@ RobotState ..|> State
 SpiderState ..|> State
 
 State --o StateMachine
-@enduml 
+'Maarten's Section: Orbs'
+
+class Jump {
+    float jumpForce
+}
+class Gravity
+
+
+object Yellow
+object Purple
+object Orange
+
+
+object Blue 
+object Green
+
+
+Jump <|-- Yellow
+Jump <|-- Orange
+Jump <|-- Purple
+
+Gravity <|-- Blue
+Gravity <|-- Green
+
+
+@enduml
